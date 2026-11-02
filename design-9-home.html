@@ -128,9 +128,9 @@ section.hero .btn{border-color:#fff;color:#fff}
 section.hero .btn-primary{background:var(--accent);border-color:var(--accent)}
 @media(max-width:820px){.split{grid-template-columns:1fr}.split-photo{min-height:250px}.fleetstrip{transform:none;margin-top:14px}}
 </style><style>
-#htLoader{position:fixed;inset:0;z-index:9999;background:#0a0a0d;display:flex;align-items:center;justify-content:center;transition:opacity .6s ease,visibility .6s}
+#htLoader,#htNav{position:fixed;inset:0;z-index:9999;background:#0a0a0d;display:flex;align-items:center;justify-content:center;transition:opacity .6s ease,visibility .6s}
 #htLoader.done{opacity:0;visibility:hidden;pointer-events:none}
-#htLoader .htl-box{text-align:center;color:#fff}
+#htLoader .htl-box,#htNav .htl-box{text-align:center;color:#fff}
 #htLoader .logo-chip{display:inline-flex;background:#fff;padding:12px 20px;border-radius:10px}
 #htLoader .logo-chip img{height:56px;width:auto}
 .htl-bar{width:210px;height:5px;background:#26262c;border-radius:99px;margin:22px auto 12px;overflow:hidden}
@@ -204,7 +204,8 @@ function htSetTheme(t,btn){
   try{seen=sessionStorage.getItem(key)==='1';sessionStorage.setItem(key,'1');}catch(e){}
   if(seen){setTimeout(hideL,120);}else if(document.readyState==='complete'){setTimeout(hideL,800);}else{window.addEventListener('load',function(){setTimeout(hideL,800);});}
   setTimeout(hideL,3000);
-  document.querySelectorAll('.ccard a').forEach(function(a){a.addEventListener('click',function(ev){var href=a.getAttribute('href');if(!href)return;ev.preventDefault();var d=document.createElement('div');d.id='htLoader';d.innerHTML='<div class="htl-box"><div class="htl-bar"><span></span></div><p>LOADING DESIGN</p></div>';document.body.appendChild(d);setTimeout(function(){location.href=href;},520);});});
+  window.addEventListener('pageshow',function(e){if(e.persisted){var L=document.getElementById('htLoader');if(L)L.remove();var N=document.getElementById('htNav');if(N)N.remove();}});
+  document.querySelectorAll('.ccard a').forEach(function(a){a.addEventListener('click',function(ev){var href=a.getAttribute('href');if(!href)return;ev.preventDefault();var old=document.getElementById('htNav');if(old)old.remove();var d=document.createElement('div');d.id='htNav';d.innerHTML='<div class="htl-box"><span class="logo-chip"><img src="'+(document.querySelector('.logo-chip img')?document.querySelector('.logo-chip img').src:'')+'" alt=""></span><div class="htl-bar"><span></span></div><p>LOADING DESIGN</p></div>';document.body.appendChild(d);setTimeout(function(){var N=document.getElementById('htNav');if(N)N.remove();},5000);setTimeout(function(){location.href=href;},520);});});
   if(!('IntersectionObserver' in window))return;
   var els=Array.prototype.slice.call(document.querySelectorAll('section,.card,.step,.stat,.photoband,.fleetstrip,.ctanavy,.ctaband,.ctadark,.dash,.notes-box'));
   var vh=window.innerHeight||800, pending=[];

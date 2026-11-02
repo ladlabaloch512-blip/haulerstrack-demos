@@ -100,14 +100,21 @@ html[data-theme="grape"]{--bg:#0e0716;--card:#1a0f2c;--accent:#8b5cf6;--line:#2f
 .hero h1 em{color:var(--accent);font-family:Georgia,serif;text-transform:none;letter-spacing:0}
 .xpanel{position:relative;min-height:420px}
 .xphoto{position:absolute;inset:0;background-image:var(--ph-semi);background-size:cover;background-position:center;clip-path:polygon(24% 0,44% 0,57% 34%,78% 0,100% 0,70% 50%,100% 100%,76% 100%,58% 62%,42% 100%,20% 100%,42% 50%);filter:saturate(1.05)}
-.glasscard{position:absolute;background:#101014;border:1px solid #2c2c34;border-radius:12px;padding:12px 14px;color:#fff;box-shadow:0 10px 22px rgba(0,0,0,.35)}
-.glasscard small{display:block;font-size:10.5px;letter-spacing:.14em;color:#bdbdc8;font-weight:800}
-.glasscard b{font-size:15px}
-.gc-route{top:6px;right:0;width:210px}
-.gc-route .route-svg{height:44px;margin:4px 0 0}
-.gc-perf{bottom:8px;right:6px;width:190px}
-.gc-perf .dash-bars{height:40px;margin-top:6px}
-.gc-load{bottom:52px;left:0}
+.uicard{position:absolute;background:#101116;border:1px solid #2b2b35;border-radius:14px;color:#fff;box-shadow:0 16px 34px rgba(0,0,0,.42);overflow:hidden}
+.uicard .uc-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 15px;border-bottom:1px solid #26262f;font-size:10.5px;letter-spacing:.13em;font-weight:800;color:#c9c9d2}
+.uicard .uc-dot{width:8px;height:8px;border-radius:50%;background:#2fbf71;flex:none}
+.uicard .uc-body{padding:12px 15px 14px}
+.uicard .uc-big{font-size:16.5px;font-weight:800;margin-bottom:6px}
+.uicard .uc-row{display:flex;justify-content:space-between;gap:12px;padding:7px 0 0;margin-top:7px;font-size:12.5px;color:#b9b9c4;border-top:1px solid #22222b}
+.uicard .uc-row b{color:#fff;font-weight:700;text-align:right}
+.uicard .uc-pill{background:var(--accent);color:#fff;font-size:10px;font-weight:800;padding:3px 9px;border-radius:999px;letter-spacing:.04em;white-space:nowrap}
+.uc-bars{display:flex;align-items:flex-end;gap:6px;height:44px}
+.uc-bars span{flex:1;background:var(--accent);border-radius:3px 3px 0 0;height:var(--h)}
+.gc-route{top:6px;right:0;width:238px}
+.gc-route .route-svg{height:40px;margin:0 0 6px;width:100%}
+.gc-perf{bottom:8px;right:6px;width:212px}
+
+.gc-load{bottom:52px;left:0;width:264px}
 .impact-head{display:flex;align-items:center;gap:18px;margin-top:6px}
 .impact-head::before,.impact-head::after{content:"";flex:1;height:2px;background:var(--accent)}
 .impact-head span{font-weight:800;letter-spacing:.22em;font-size:13px}
@@ -121,11 +128,11 @@ html[data-theme="grape"]{--bg:#0e0716;--card:#1a0f2c;--accent:#8b5cf6;--line:#2f
 .footer a,.footer span{color:#b5b5bf}.footer p{color:#95959f}.footer-base{color:#83838d}
 .hero-anim{animation:d5in .7s ease both}
 @keyframes d5in{from{transform:translateY(26px)}to{transform:none}}
-@media(max-width:820px){.xpanel{min-height:300px}.gc-route{width:170px}.gc-perf{display:none}}
+@media(max-width:820px){.xpanel{min-height:320px}.gc-route{width:196px}.gc-load{width:210px;bottom:14px}.gc-perf{display:none}}
 </style><style>
-#htLoader{position:fixed;inset:0;z-index:9999;background:#0a0a0d;display:flex;align-items:center;justify-content:center;transition:opacity .6s ease,visibility .6s}
+#htLoader,#htNav{position:fixed;inset:0;z-index:9999;background:#0a0a0d;display:flex;align-items:center;justify-content:center;transition:opacity .6s ease,visibility .6s}
 #htLoader.done{opacity:0;visibility:hidden;pointer-events:none}
-#htLoader .htl-box{text-align:center;color:#fff}
+#htLoader .htl-box,#htNav .htl-box{text-align:center;color:#fff}
 #htLoader .logo-chip{display:inline-flex;background:#fff;padding:12px 20px;border-radius:10px}
 #htLoader .logo-chip img{height:56px;width:auto}
 .htl-bar{width:210px;height:5px;background:#26262c;border-radius:99px;margin:22px auto 12px;overflow:hidden}
@@ -149,9 +156,9 @@ html[data-theme="grape"]{--bg:#0e0716;--card:#1a0f2c;--accent:#8b5cf6;--line:#2f
 <a class="btn" href="design-5-pricing.html">See Pricing</a>
 <p class="note">Our Mission: reliable, organized, technology-enabled dispatching support that helps carriers manage daily operations with greater efficiency and visibility.</p></div></div>
 <div class="xpanel" aria-hidden="true"><div class="xphoto"></div>
-<div class="glasscard gc-route"><small>REAL-TIME ROUTING</small><svg class="route-svg" viewBox="0 0 600 64" fill="none" aria-hidden="true"><path class="route-path" d="M8 48 C 140 8, 260 60, 380 26 S 560 20, 592 30" stroke-width="3" stroke-linecap="round"/><circle class="route-end" cx="8" cy="48" r="6"/><circle class="route-end" cx="592" cy="30" r="6"/><circle class="route-dot" r="6"><animateMotion dur="7s" repeatCount="indefinite" path="M8 48 C 140 8, 260 60, 380 26 S 560 20, 592 30"/></circle></svg></div>
-<div class="glasscard gc-load"><small>ACTIVE LOAD · SAMPLE</small><b>HT-1001 · Dry Van</b><br><span style="font-size:12.5px;color:#bdbdc8">Richmond, VA → Charlotte, NC · In transit</span></div>
-<div class="glasscard gc-perf"><small>PERFORMANCE · SAMPLE</small><div class="dash-bars"><span style="--h:38%"></span><span style="--h:62%"></span><span style="--h:48%"></span><span style="--h:78%"></span><span style="--h:58%"></span><span style="--h:88%"></span><span style="--h:70%"></span></div></div>
+<div class="uicard gc-route"><div class="uc-head"><span>LIVE ROUTING</span><span class="uc-dot"></span></div><div class="uc-body"><svg class="route-svg" viewBox="0 0 600 64" fill="none" aria-hidden="true"><path class="route-path" d="M8 48 C 140 8, 260 60, 380 26 S 560 20, 592 30" stroke-width="3" stroke-linecap="round"/><circle class="route-end" cx="8" cy="48" r="6"/><circle class="route-end" cx="592" cy="30" r="6"/><circle class="route-dot" r="6"><animateMotion dur="7s" repeatCount="indefinite" path="M8 48 C 140 8, 260 60, 380 26 S 560 20, 592 30"/></circle></svg><div class="uc-row"><span>Richmond, VA</span><b>Charlotte, NC</b></div><div class="uc-row"><span>Norfolk, VA</span><b>Atlanta, GA</b></div></div></div>
+<div class="uicard gc-load"><div class="uc-head"><span>ACTIVE LOAD · SAMPLE</span><span class="uc-pill">IN TRANSIT</span></div><div class="uc-body"><div class="uc-big">HT-1001 · Dry Van</div><div class="uc-row"><span>Route</span><b>Richmond → Charlotte</b></div><div class="uc-row"><span>Next update</span><b>Pickup confirmed</b></div></div></div>
+<div class="uicard gc-perf"><div class="uc-head"><span>WEEKLY LOADS · SAMPLE</span></div><div class="uc-body"><div class="uc-bars"><span style="--h:38%"></span><span style="--h:62%"></span><span style="--h:48%"></span><span style="--h:78%"></span><span style="--h:58%"></span><span style="--h:88%"></span><span style="--h:70%"></span></div><div class="uc-row" style="margin-top:8px"><span>Mon — Sun</span><b>Sample data</b></div></div></div>
 </div></div></section>
 <section style="padding-top:6px"><div class="impact-head"><span>THE HAULERSTRACK IMPACT</span></div><div class="statsband"><div class="stat"><b class="count" data-count="8">8</b><span>Dispatch Services</span></div><div class="stat"><b class="count" data-count="8">8</b><span>Process Steps</span></div><div class="stat"><b class="count" data-count="3">3</b><span>Fleet Types</span></div><div class="stat"><b class="count" data-count="4">4</b><span>Pricing Options</span></div></div></section>
 <div class="photoband" role="img" aria-label="Trucks on the road in the United States"><span class="photoband-cap">Dispatch support for Semi Trucks, Box Trucks, and Hotshot Trucks — across the United States.</span></div>
@@ -206,7 +213,8 @@ function htSetTheme(t,btn){
   try{seen=sessionStorage.getItem(key)==='1';sessionStorage.setItem(key,'1');}catch(e){}
   if(seen){setTimeout(hideL,120);}else if(document.readyState==='complete'){setTimeout(hideL,800);}else{window.addEventListener('load',function(){setTimeout(hideL,800);});}
   setTimeout(hideL,3000);
-  document.querySelectorAll('.ccard a').forEach(function(a){a.addEventListener('click',function(ev){var href=a.getAttribute('href');if(!href)return;ev.preventDefault();var d=document.createElement('div');d.id='htLoader';d.innerHTML='<div class="htl-box"><div class="htl-bar"><span></span></div><p>LOADING DESIGN</p></div>';document.body.appendChild(d);setTimeout(function(){location.href=href;},520);});});
+  window.addEventListener('pageshow',function(e){if(e.persisted){var L=document.getElementById('htLoader');if(L)L.remove();var N=document.getElementById('htNav');if(N)N.remove();}});
+  document.querySelectorAll('.ccard a').forEach(function(a){a.addEventListener('click',function(ev){var href=a.getAttribute('href');if(!href)return;ev.preventDefault();var old=document.getElementById('htNav');if(old)old.remove();var d=document.createElement('div');d.id='htNav';d.innerHTML='<div class="htl-box"><span class="logo-chip"><img src="'+(document.querySelector('.logo-chip img')?document.querySelector('.logo-chip img').src:'')+'" alt=""></span><div class="htl-bar"><span></span></div><p>LOADING DESIGN</p></div>';document.body.appendChild(d);setTimeout(function(){var N=document.getElementById('htNav');if(N)N.remove();},5000);setTimeout(function(){location.href=href;},520);});});
   if(!('IntersectionObserver' in window))return;
   var els=Array.prototype.slice.call(document.querySelectorAll('section,.card,.step,.stat,.photoband,.fleetstrip,.ctanavy,.ctaband,.ctadark,.dash,.notes-box'));
   var vh=window.innerHeight||800, pending=[];
