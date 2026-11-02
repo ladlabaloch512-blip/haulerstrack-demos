@@ -128,8 +128,8 @@ section .photoband{margin-inline:0}
 .htl-bar span{display:block;height:100%;width:40%;background:#e4232a;border-radius:99px;animation:htlSlide 1s ease-in-out infinite}
 @keyframes htlSlide{0%{transform:translateX(-110%)}100%{transform:translateX(280%)}}
 #htLoader p{margin:0;font-size:11px;letter-spacing:.34em;color:#9a9aa4;font-weight:700}
-.rv{opacity:0;transform:translateY(38px) scale(.985);filter:blur(3px)}
-.rv.in{opacity:1;transform:none;filter:none;transition:opacity .85s cubic-bezier(.22,.8,.28,1),transform .85s cubic-bezier(.22,.8,.28,1),filter .85s cubic-bezier(.22,.8,.28,1)}
+.rv{opacity:0;transform:translateY(38px) scale(.985)}
+.rv.in{opacity:1;transform:none;transition:opacity .85s cubic-bezier(.22,.8,.28,1),transform .85s cubic-bezier(.22,.8,.28,1)}
 .btn,.card,.step,.swatch{transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease,color .25s ease,opacity .25s ease}
 .fleet-photo,.photoband{transition:transform .5s ease}
 @media (prefers-reduced-motion: reduce){.htl-bar span{animation:none}.rv{opacity:1;transform:none;filter:none}}

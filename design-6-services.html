@@ -99,8 +99,8 @@ html[data-theme="plum"]{--accent:#9333a6;--soft:#f3eaf6}
 .topbar{max-width:1360px;margin:auto}
 .hero h1{font-weight:900;letter-spacing:-.025em}
 .hero h1 em{color:var(--accent);font-style:normal}
-.hero-photo{position:relative;border-radius:26px;min-height:430px;background-image:var(--ph-semi);background-size:cover;background-position:center;box-shadow:0 30px 60px rgba(13,13,16,.16)}
-.chipfloat{position:absolute;background:#fff;border-radius:14px;box-shadow:0 14px 30px rgba(13,13,16,.16);padding:11px 15px;font-weight:800;font-size:13px}
+.hero-photo{position:relative;border-radius:26px;min-height:430px;background-image:var(--ph-semi);background-size:cover;background-position:center;box-shadow:0 14px 30px rgba(13,13,16,.13)}
+.chipfloat{position:absolute;background:#fff;border-radius:14px;box-shadow:0 8px 18px rgba(13,13,16,.12);padding:11px 15px;font-weight:800;font-size:13px}
 .chipfloat b{display:block;font-size:19px;color:var(--accent)}
 .chip-a{top:20px;left:20px}.chip-b{bottom:24px;right:20px}.chip-c{top:20px;right:20px}
 .iconwrap{display:inline-flex;width:52px;height:52px;border-radius:15px;background:var(--accent);color:#fff;align-items:center;justify-content:center}
@@ -128,8 +128,8 @@ html[data-theme="plum"]{--accent:#9333a6;--soft:#f3eaf6}
 .htl-bar span{display:block;height:100%;width:40%;background:#e4232a;border-radius:99px;animation:htlSlide 1s ease-in-out infinite}
 @keyframes htlSlide{0%{transform:translateX(-110%)}100%{transform:translateX(280%)}}
 #htLoader p{margin:0;font-size:11px;letter-spacing:.34em;color:#9a9aa4;font-weight:700}
-.rv{opacity:0;transform:translateY(38px) scale(.985);filter:blur(3px)}
-.rv.in{opacity:1;transform:none;filter:none;transition:opacity .85s cubic-bezier(.22,.8,.28,1),transform .85s cubic-bezier(.22,.8,.28,1),filter .85s cubic-bezier(.22,.8,.28,1)}
+.rv{opacity:0;transform:translateY(38px) scale(.985)}
+.rv.in{opacity:1;transform:none;transition:opacity .85s cubic-bezier(.22,.8,.28,1),transform .85s cubic-bezier(.22,.8,.28,1)}
 .btn,.card,.step,.swatch{transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease,color .25s ease,opacity .25s ease}
 .fleet-photo,.photoband{transition:transform .5s ease}
 @media (prefers-reduced-motion: reduce){.htl-bar span{animation:none}.rv{opacity:1;transform:none;filter:none}}
